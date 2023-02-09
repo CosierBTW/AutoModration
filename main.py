@@ -30,5 +30,7 @@ class MyClient(discord.Client):
                     await message.channel.send("No EXE's allowed!")
                 else:
                     break
-client = MyClient()
+intents = discord.Intents.default()
+intents.message_content = True
+client = MyClient(intents=intents)
 client.run('TOKEN')
